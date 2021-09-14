@@ -1,6 +1,7 @@
 package unl.cse.library;
 
 import java.time.LocalDate;
+import java.time.Period;
 
 /**
  * This class models an individual book.
@@ -13,12 +14,27 @@ public class Book {
     private Author author;
     private LocalDate publishDate;
 
+    
+    public Book(String t, Author a, String i, String p)
+    {
+    	title = t;
+    	isbn = i;
+    	author = a;
+    	publishDate = LocalDate.parse(p);;
+    }
+    
+    public int getAge()
+    {
+    	return Period.between(this.publishDate, LocalDate.now()).getYears();
+    }
+    
+    
     /**
      * Getter method for author
      * @return
      */
     public Author getAuthor() {
-        return null;
+        return author;
     }
 
     /**
@@ -34,7 +50,7 @@ public class Book {
      * @return
      */
     public String getISBN() {
-        return null;
+        return isbn;
     }
 
     /**
@@ -50,7 +66,7 @@ public class Book {
      * @return
      */
     public String getTitle() {
-        return null;
+        return title;
     }
 
     /**

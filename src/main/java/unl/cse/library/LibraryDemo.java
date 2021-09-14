@@ -78,12 +78,12 @@ public class LibraryDemo {
     private void printBooks(List<Book> books) {
 
     	System.out.print("\n");
-    	System.out.println(String.format("%-50s %-20s %-15s", "TITLE", "AUTHOR", "ISBN"));
+    	System.out.println(String.format("%-50s %-20s %-15s %-10s", "TITLE", "AUTHOR","AGE"));
         for (Book b : books) {
         	String formattedAuthor = null;
         	if(b.getAuthor() != null)
         		formattedAuthor = b.getAuthor().lastName + ", " + b.getAuthor().lastName;
-        	String line = String.format("%-50s %-20s %-15s", b.getTitle(), formattedAuthor, b.getISBN());
+        	String line = String.format("%-50s %-20s %-15s %-10s", b.getTitle(), formattedAuthor, b.getISBN(), b.getAge());
         	System.out.println(line);
         }
         System.out.print("\n\n");
